@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-svg-icon svg {
+  color: blue; /* رنگ دلخواه */
+  stroke: blue;
+}
+
+/* ---- Linktree-style background (Rich Multicolor Version) ---- */
+body {
+  position: relative;
+  min-height: 100vh;
+  overflow-y: auto; /* ✅ حالا اسکرول عمودی فعال میشه */
+  overflow-x: hidden; 
+  background:
+    /* هاله‌های بالای صفحه */
+    radial-gradient(circle at top left, rgba(255, 255, 0, 0.1), transparent 70%),
+    radial-gradient(circle at top left, rgba(0, 255, 100, 0.05), transparent 70%),
+
+    /* جلوه‌های رنگی پایین صفحه */
+    radial-gradient(circle at bottom right, rgba(50, 100, 200, 0.15), transparent 70%),   /* آبی */
+    radial-gradient(circle at bottom left, rgba(255, 80, 80, 0.1), transparent 75%),       /* قرمز */
+    radial-gradient(circle at 60% 100%, rgba(139, 69, 19, 0.15), transparent 80%),         /* قهوه‌ای */
+    radial-gradient(circle at 40% 95%, rgba(255, 255, 255, 0.08), transparent 75%),        /* سفید */
+    radial-gradient(circle at 70% 90%, rgba(255, 255, 150, 0.12), transparent 80%),        /* زرد ملایم */
+
+    /* گرادینت تیره‌ی اصلی */
+    linear-gradient(to bottom, #1a1a1a 0%, #0e0e0e 40%, #000000 100%);
+    
+  background-blend-mode: screen, overlay;
+  color: white;
+
+  /* افکت محو نرم — سازگار با Safari */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+/* محتوای اصلی بالای بک‌گراند */
+main,
+.container {
+  position: relative;
+  z-index: 10;
+}
+
