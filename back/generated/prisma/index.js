@@ -189,7 +189,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\SAFIR2023\\Desktop\\ccopy-melon\\back\\generated\\prisma",
+      "value": "C:\\Users\\SAFIR2023\\Desktop\\copy-2\\back\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -203,7 +203,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\SAFIR2023\\Desktop\\ccopy-melon\\back\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\SAFIR2023\\Desktop\\copy-2\\back\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -217,11 +217,12 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://neondb_owner:npg_E0BN9RtLWkxZ@ep-plain-boat-adutf2cz-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+        "value": null
       }
     }
   },
