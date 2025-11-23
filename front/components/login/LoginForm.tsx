@@ -12,54 +12,54 @@ import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-// --- Dynamic imports for React-Leaflet ---
-const MapContainer = dynamic(
-  () => import("react-leaflet").then((mod) => mod.MapContainer),
-  { ssr: false }
-);
-const TileLayer = dynamic(
-  () => import("react-leaflet").then((mod) => mod.TileLayer),
-  { ssr: false }
-);
-const Marker = dynamic(
-  () => import("react-leaflet").then((mod) => mod.Marker),
-  { ssr: false }
-);
-const Popup = dynamic(
-  () => import("react-leaflet").then((mod) => mod.Popup),
-  { ssr: false }
-);
-import { useMapEvents } from "react-leaflet";
+// // --- Dynamic imports for React-Leaflet ---
+// const MapContainer = dynamic(
+//   () => import("react-leaflet").then((mod) => mod.MapContainer),
+//   { ssr: false }
+// );
+// const TileLayer = dynamic(
+//   () => import("react-leaflet").then((mod) => mod.TileLayer),
+//   { ssr: false }
+// );
+// const Marker = dynamic(
+//   () => import("react-leaflet").then((mod) => mod.Marker),
+//   { ssr: false }
+// );
+// const Popup = dynamic(
+//   () => import("react-leaflet").then((mod) => mod.Popup),
+//   { ssr: false }
+// );
+// import { useMapEvents } from "react-leaflet";
 
 // --- SVG Icon for Marker ---
-const svgIcon = L.divIcon({
-  className: "custom-svg-icon",
-  html: `
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="32" height="32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-    </svg>
-  `,
-  iconAnchor: [16, 32],
-  popupAnchor: [0, -32],
-});
+// const svgIcon = L.divIcon({
+//   className: "custom-svg-icon",
+//   html: `
+//     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="32" height="32">
+//       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+//       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+//     </svg>
+//   `,
+//   iconAnchor: [16, 32],
+//   popupAnchor: [0, -32],
+// });
 
 // --- LocationMarker Component ---
-function LocationMarker({ position, setPosition }:any) {
-  useMapEvents({
-    click(e) {
-      setPosition({ lat: e.latlng.lat, lng: e.latlng.lng });
-    },
-  });
+// function LocationMarker({ position, setPosition }:any) {
+//   useMapEvents({
+//     click(e) {
+//       setPosition({ lat: e.latlng.lat, lng: e.latlng.lng });
+//     },
+//   });
 
-  if (!position) return null;
+//   if (!position) return null;
 
-  return (
-    <Marker position={[position.lat, position.lng]} icon={svgIcon}>
-      <Popup>اینجا مکان شماست!</Popup>
-    </Marker>
-  );
-}
+//   return (
+//     <Marker position={[position.lat, position.lng]} icon={svgIcon}>
+//       <Popup>اینجا مکان شماست!</Popup>
+//     </Marker>
+//   );
+// }
 
 // --- Main Component ---
 export default function ModernLoginMap() {
@@ -218,7 +218,7 @@ useEffect(() => {
           />
 
           {/* Map */}
-          <div>
+          {/* <div>
             <label className="text-white text-sm">مکان خود را روی نقشه انتخاب کنید</label>
             <div className="w-full h-64 mt-2 rounded-xl overflow-hidden border border-white/40">
              <MapContainer
@@ -234,7 +234,7 @@ useEffect(() => {
                 <LocationMarker position={position} setPosition={setPosition} />
               </MapContainer>
             </div>
-          </div>
+          </div> */}
 
           {/* Submit */}
           <button
